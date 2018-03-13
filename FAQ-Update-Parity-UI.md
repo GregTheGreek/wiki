@@ -1,4 +1,4 @@
-### Custom UI
+### How to customize Parity UI ?
 
 If you choose to update the UI, for instance making custom images for all your ethereum accounts, it can be done quite easily. The UI is mainly written in React/Redux, the necessary files to update can be found in `./js`.
 
