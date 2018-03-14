@@ -16,6 +16,3 @@ npm start in the UI repo
 1. Run node with `--ui-no-validation`
 2. That should reflect the UI changes immediately at http://localhost:3000
 
-```
-ui-precompiled = ["parity-ui/no-precompiled-js"]
-```
