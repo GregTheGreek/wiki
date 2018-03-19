@@ -1,18 +1,18 @@
 ### How to customize Parity UI ?
 
-If you choose to update the UI, for instance making custom images for all your ethereum accounts, it can be done quite easily. The UI is mainly written in React/Redux, the necessary files to update can be found in `./js`.
+In dev mode:
 
-`./js/src/views` contains the main views.
-`./js/src/ui` contains reusable components.
+Fork https://github.com/parity-js/shell and make your modifications to the UI
+npm start
+Run node with --ui-no-validation
+Visit localhost:3000, the page should refresh on file changes.
+(optional) Commit your changes, and submit a PR!
+In local prod mode:
 
-To build from the `./js` source:
-`cargo build --release --no-default-features --features ui`
-
-This will attempt to build the UI from source while building the binary instead of using precompiled version.
-
-Also there is UI development mode:
-
-npm start in the UI repo
-1. Run node with `--ui-no-validation`
-2. That should reflect the UI changes immediately at http://localhost:3000
-
+Fork https://github.com/parity-js/shell and make your modifications to the UI
+Push your changes, copy the latest commit reference
+Clone/Fork https://github.com/paritytech/parity, and in ./dapps/ui/Cargo.toml modify the line parity-ui-dev = { ... } to point to your forked repo and commit reference
+Run cargo update -p parity-ui to update Cargo.lock
+cargo build --release --no-default-features --features ui
+Run parity, visit localhost:8180.
+Dev mode should be used as much as possible, since it allows fast iterations. Local prod mode is only used when you want the UI changes to be bundled into your parity when cargo building it.
